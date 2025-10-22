@@ -1,0 +1,459 @@
+/*
+cores
+Amarelo queimado - #BF7E04
+Amarelo queimado mais escuro - #A64F03
+Marrom vermelho - #8C2703
+Verniz claro - #591202
+Verniz escuro - #260101
+
+FONTES
+font-family: 'Fredericka the Great', cursive;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Pacifico', cursive;
+*/
+
+/*-----HEADER-----*/
+* { /*zerar tudo*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*ficar um quadrado*/
+}
+
+ /*-----FONTES-----*/
+h1 {
+    font-family: 'Mynerve' cursive;
+    text-shadow: 4px 4px 6px;
+    font-weight: 700;
+    font-size: max(20px, 5.2vw);
+}
+
+h2 {
+    font-family: 'Mynerve' cursive;
+    text-shadow: 4px 4px 6px;
+    font-weight: 700;
+    font-size: max(10px, 5.2vw);
+}
+
+/*-----IMAGENS-----*/
+img { /*deixar imagens fluidas*/
+    max-width: 100%; 
+    height: auto;
+}
+
+ /*-----CAPA-----*/
+header { 
+    width: 100%;
+    min-height: 95vh; /*não vai utilizar a página inteira*/
+    background: linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.2)),url(../imagens/tecnologia.jpg); /*adicionar imagem*/
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover; /*preencher toda a tela*/
+    position: relative; /*por causa dos botões*/
+    /*preenche quase toda a tela*/
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*-----BOTÕES E LOGO-----*/
+header nav#nav-esq {
+    width: 100%;
+    height: 90px; 
+    background-color: #b63d05;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /*ficar à esquerda*/
+    padding: 0 1rem;
+    gap: 2rem; /*espaço logo e menu*/
+}
+
+header nav#nav-esq #logo {
+    height: 90px; 
+}
+
+header nav#nav-esq #logo img{
+    max-height: 100%;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0; /*preenchimento interno do elemento*/
+    margin: 0;
+}
+
+/*-----ÍCONE MENU (MOBILE)-----*/
+#icone-menu {
+    position: fixed; /*fixar o elemento*/
+    top: 10px;
+    right: 10px;
+    display: none; /* só mostra no mobile */
+    gap: 10px;
+    z-index: 2000; /* maior que a capa*/
+    cursor: pointer;
+}
+
+#icone-menu li { /*trabalhar com a lista*/
+    font-size: 2rem;
+    color: #fff;
+}
+
+/*-----MENU-PRINCIPAL-----*/
+#menu-principal {
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    z-index: 1500; /* maior que a capa */
+}
+
+#menu-principal li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    transition: .3s ease-out;
+}
+
+#menu-principal li a:hover { /*mudar de cor ao passar o mouse no link*/
+    border-bottom: 1px solid #fff;
+    opacity: .6;
+}
+
+/*-----CHAMADA-----*/
+header div.chamada{
+    position: absolute; /* posiciona dentro do header */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    max-width: 90%; /*limite de largura*/
+    width: 90%; /*ocupa até 90% do mobile*/
+    padding: 1rem; /*espaço interno*/
+    color: #fff; 
+    z-index: 1; /* menor que o menu */
+}
+
+header div.chamada h1 {
+    color: #fff;
+    line-height: 1.2; /*altura da linha*/
+    font-size: clamp(2rem, 8vw, 5rem); /* escala entre 2rem e 5rem */
+    /*uso do clamp para cresça ou diminua conforme o tamanho da tela*/
+    animation-name: HeardeH1-moverParaDireita;
+    animation-duration: 2s;
+    animation-timing-function: ease-out; /*efeito de saída do mouse*/
+}
+
+header div.chamada h2 {
+    color: #23f3bf;
+    font-size: clamp(1.2rem, 4vw, 2.5rem);
+    line-height: 1.5;
+    animation-name: HeardeH2-moverParaEsquerda;
+    animation-duration: 5s;
+    animation-delay: 1s;
+    animation-timing-function: ease-out; /*efeito de saída do mouse*/
+    animation-fill-mode: backwards;
+    white-space: nowrap;   /* impede quebra de linha */
+    display: inline-block; /* mantém o bloco só no tamanho do texto */
+}
+
+/*-----Botão da Chamada-----*/
+header div.chamada a {
+    font-size: clamp(0.8rem, 2vw, 1.5rem);
+    color: #fff;
+    text-decoration: none;
+    padding: 1rem 3rem;
+    border-radius: 50px; /*deixa o botão redondo*/
+    font-weight: 600;
+    background: linear-gradient(rgb(255, 131, 48)0%,rgb(194, 65, 33)50%, rgba(140,28,58,1)100%);
+    display: inline-block;
+    animation-name: HeaderA-moverParaCima;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: backwards;
+    transition: 3s ease-in-out;
+}
+
+header div.chamada a:hover {
+    opacity: 0.8;
+}
+
+/*-----Colunas abaixo da capa-----*/
+main {
+    background-color: #f08f62;
+}
+main section.info {
+    max-width: 100%;
+    padding: 60px;
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+main section.info .row { 
+    display:flex;
+    flex-direction: row; /* Garante que os itens fiquem lado a lado*/
+    justify-content: space-between; /* Para distribuir o espaço entre as colunas */
+    align-items: center; 
+    gap: 10px;
+}
+
+main section.info img {
+    width: 150px;       /* Ajusta a largura */
+    height: 150px;      /* Ajusta a altura */
+    align-items: center;
+    border-radius: 50%;
+    border: 4px solid #000;
+}
+
+main section.info h2 {
+    text-align: center;
+    font-size: 40px;
+    color: #b33900;
+}
+
+main section.info p {
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+}
+
+/*-----Botão abaixo das colunas-----*/
+main section.info .botao {
+    display: block;           /* ocupa a largura do conteúdo */
+    text-align: center;       /* centraliza o link interno */
+    margin-top: 5rem;         /* espaço entre imagem e botão */
+}
+
+main section.info .botao a {
+    font-size: clamp(0.8rem, 2vw, 1.5rem);
+    color: #fff;
+    text-decoration: none;
+    padding: 1rem 3rem;
+    border-radius: 50px;
+    font-weight: 600;
+    background: linear-gradient(rgb(255,131,48)0%,rgb(194,65,33)50%,rgba(140,28,58,1)100%);
+    display: inline-block;
+    animation-name: HeaderA-moverParaCima;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: backwards;
+    transition: 3s ease-in-out;
+}
+
+main section.info a:hover {
+    opacity: 0.8;
+}
+
+/*-----Principal-----*/
+main section.principal {
+    max-width: 100%;
+    padding: 60px;
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+main section.principal .row { 
+    display:flex;
+    flex-direction: row; /* Garante que os itens fiquem lado a lado*/
+    justify-content: space-between; /* Para distribuir o espaço entre as colunas */
+    align-items: center; 
+    gap: 10px;
+}
+
+main section.principal .row.featurette { /*imagens*/
+    align-items: center;
+    padding: 60px;
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+}
+
+main section.principal .row.featurette:nth-of-type(2) { /*inverter direção da segunda imagem*/
+    flex-direction: row-reverse;   
+}
+
+main section.principal h2 {
+    text-align: center;
+    font-size: 40px;
+    color: #b33900;
+}
+
+main section.principal p {
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+}
+
+
+/*-----Botão do meio da página-----*/
+main section.principal .col-md-7 .botao {
+    display: block;           /* ocupa a largura do conteúdo */
+    text-align: center;       /* centraliza o link interno */
+    margin-top: 5rem;         /* espaço entre imagem e botão */
+}
+
+main section.principal .col-md-7 .botao a {
+    font-size: clamp(0.8rem, 2vw, 1.5rem);
+    color: #fff;
+    text-decoration: none;
+    padding: 1rem 3rem;
+    border-radius: 50px;
+    font-weight: 600;
+    background: linear-gradient(rgb(255,131,48)0%,rgb(194,65,33)50%,rgba(140,28,58,1)100%);
+    display: inline-block;
+    animation-name: HeaderA-moverParaCima;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: backwards;
+    transition: 3s ease-in-out;
+}
+
+main section.principal .col-md-7 a:hover {
+    opacity: 0.8;
+}
+
+/*-----3 colunas-----*/
+.tech-container {
+    width: 100%; /*tamanho total onde a imagem vai estar*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 40px;
+
+}
+
+.tech-container .row {
+    display: flex;
+    justify-content: center; /* centraliza horizontalmente */
+    gap: 80px; /* espaço entre as colunas */
+}
+
+.tech-container .col {
+    flex: 1;             /* ocupa espaço igualmente */
+    max-width: 300px;    /*limite da largura dos cards */
+}
+
+.tech-container .card {
+    height: 100%; /*deixar no mesmo tamanho*/
+    border: 3px solid #b63d05;
+    background-color: #f3dfb9;
+    column-gap: 70px;
+}
+
+.tech-container .card img {
+    border: 3px solid #b63d05;
+}
+
+/*-----3 colunas texto-----*/
+.tech-container .card h5 {
+    font-family: 'Mynerve' cursive;
+    text-align: center;
+    font-weight: 700;
+    font-size: 30px;
+    border-bottom: #b63d05;
+    color: #b63d05;
+}
+
+.tech-container .card hr { /*linha que separa a imagem do título*/
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: #b63d05;
+}
+
+.tech-container .card p {
+    color: #752905;
+    font-size: 20px;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+/*-----Rodapé-----*/
+.footer-container {
+    width: 100%;
+    background-color: #b63d05;
+    color: #ccc;
+    text-align: center;
+}
+
+/* Container principal do footer */
+.footer-container .logo-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    flex-wrap: wrap; /* permite quebrar em telas menores */
+}
+
+/* Logo */
+.footer-container img.icon-rodape {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  background-color: #b63d05;
+  border-radius: 6px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+/* Área do menu */
+.footer-container .footer-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Menu em coluna */
+.footer-container #menu-principal {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+}
+
+/* Links do menu */
+.footer-container #menu-principal a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+.footer-container #menu-principal a:hover {
+  color: #f37702;
+}
+
+/* Cartão */
+.footer-container .cartao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-container .footer-img-cartao img {
+  width: 290px;
+  border-radius: 6px;
+}
+
+.footer-container .cartao span {
+    font-size: 20px;
+}
+
+/* Direitos autorais */
+.footer-container .autorais {
+  display: block;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 0.9rem;
+  color: #ddd;
+  border-top: 1px solid #a63a04;
+  margin-top: 10px;
+}

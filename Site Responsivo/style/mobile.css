@@ -1,0 +1,112 @@
+/* ======= MOBILE.CSS ======= */
+
+/* Até 768px (celulares e tablets) */
+@media (max-width: 768px) {
+  /* Menu principal vira vertical */
+  #menu-principal {
+    display: none;  /* escondido por padrão */
+    flex-direction: column;
+    position: absolute;
+    top: 90px;
+    right: 0;
+    background: #b63d05;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+    gap: 1rem;
+    z-index: 2000;
+  }
+
+  #menu-principal li a {
+    font-size: 1.2rem;
+    display: block;
+    padding: 10px;
+  }
+
+  /* Ícone de menu aparece */
+  #icone-menu {
+    display: flex;
+  }
+
+  /* Capa centralizada */
+  header div.chamada {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  header div.chamada h1 {
+    font-size: clamp(1.8rem, 7vw, 3rem);
+  }
+
+  header div.chamada h2 {
+    font-size: clamp(1rem, 5vw, 1.5rem);
+    white-space: normal; /* permite quebra em telas menores */
+  }
+
+  header div.chamada a {
+    padding: 0.8rem 2rem;
+  }
+
+  /* Colunas info/principal ficam empilhadas */
+  main section.info .row,
+  main section.principal .row.featurette {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+    padding: 20px 10px;
+  }
+
+  main section.info img,
+  main section.principal img {
+    width: 200px;
+    height: 200px;
+  }
+
+  main section.info h2,
+  main section.principal h2 {
+    font-size: clamp(1.2rem, 6vw, 2rem);
+  }
+
+  main section.info p,
+  main section.principal p {
+    font-size: clamp(0.9rem, 4vw, 1.2rem);
+  }
+
+  /* Botões */
+  main section.info .botao,
+  main section.principal .col-md-7 .botao {
+    margin-top: 2rem;
+  }
+
+  /* Cards (3 colunas viram 1) */
+  .tech-container .row {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .tech-container .col {
+    max-width: 90%;
+  }
+
+  .tech-container .card p {
+    font-size: clamp(0.9rem, 4vw, 1.2rem);
+  }
+
+  /* Rodapé empilhado */
+  .rodape footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .rodape ul {
+    justify-content: center;
+    margin-left: 0;
+  }
+
+  .rodape img.icon-rodape {
+    width: 50px;
+    height: 50px;
+  }
+}

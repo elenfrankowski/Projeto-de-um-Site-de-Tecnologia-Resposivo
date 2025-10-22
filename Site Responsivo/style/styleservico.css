@@ -1,0 +1,285 @@
+/*-----HEADER-----*/
+* { /*zerar tudo*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*ficar um quadrado*/
+}
+
+/*-----BODY-----*/
+html, body {
+    height: 100%;              /* corpo ocupa 100% da tela */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;    /* empilha o conteúdo verticalmente */
+}
+
+header{
+    background-color: #f08f62;
+}
+
+ /*-----FONTES-----*/
+h1 {
+    font-family: 'Mynerve' cursive;
+    text-shadow: 4px 4px 6px;
+    font-weight: 700;
+    font-size: max(20px, 5.2vw);
+}
+
+
+/*-----BOTÕES E LOGO-----*/
+header nav#nav-esq {
+    width: 100%;
+    height: 90px; 
+    background-color: #b63d05;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /*ficar à esquerda*/
+    padding: 0 1rem;
+    gap: 2rem; /*espaço logo e menu*/
+}
+
+header nav#nav-esq #logo {
+    height: 90px; 
+}
+
+header nav#nav-esq #logo img{
+    max-height: 100%;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0; /*preenchimento interno do elemento*/
+    margin: 0;
+}
+
+/*-----ÍCONE MENU (MOBILE)-----*/
+#icone-menu {
+    position: fixed; /*fixar o elemento*/
+    top: 10px;
+    right: 10px;
+    display: none; /* só mostra no mobile */
+    gap: 10px;
+    z-index: 1000; /* define a ordem de empilhamento dos elementos posicionados*/
+    cursor: pointer;
+}
+
+#icone-menu li { /*trabalhar com a lista*/
+    font-size: 2rem;
+    color: #fff;
+}
+
+/*-----MENU-PRINCIPAL-----*/
+#menu-principal {
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+}
+
+#menu-principal li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    transition: .3s ease-out;
+}
+
+#menu-principal li a:hover { /*mudar de cor ao passar o mouse no link*/
+    border-bottom: 1px solid #fff;
+    opacity: .6;
+}
+
+/*-----SERVIÇO-----*/
+header div.servico {
+    position: static;
+    max-width: 100%;
+    width: 100%;
+    padding: 2rem;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+header div.servico h1 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+header div.servico h2 {
+    color: #fff;
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    line-height: 1.5;
+    text-align: justify;
+    margin-bottom: 1rem;
+}
+
+/*-----MAIN-----*/
+main {
+    flex: 1;                   /* faz o main ocupar todo o espaço disponível */
+    background-color: #f08f62;
+    padding: 60px 20px;
+}
+
+/*-----COLUNAS-----*/
+main {
+    background-color: #f08f62;
+    padding: 60px 20px;
+}
+
+main .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 200px;
+}
+
+main .servico {
+    width: 18rem;
+    background-color: #f3dfb9;
+    border-radius: 10px;
+    text-align: center;
+    padding: 2px;
+}
+
+
+main .servico img {
+    width: 280px;
+    height: 180px;
+    border-radius: 5%;
+    border: 4px solid #f3dfb9;
+    object-fit: cover;
+}   
+
+main .servico h2 {
+    font-size: 50px;
+    color: #b33900;
+}
+
+main .servico h3 {
+    color: #333;
+}
+
+/*-----Botão das colunas-----*/
+main .servico .botao {
+    display: block;           /* ocupa a largura do conteúdo */
+    text-align: center;       /* centraliza o link interno */
+    margin-top: 5rem;         /* espaço entre imagem e botão */
+}
+
+main .servico a {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    background: linear-gradient(rgb(255,131,48)0%,rgb(194,65,33)50%,rgba(140,28,58,1)100%);
+    transition: opacity 0.3s ease-in-out;
+}
+
+main .servico a:hover {
+    opacity: 0.8;
+}
+
+/*-----FOOTER-----*/
+footer {
+    width: 100%;
+    background-color: #b63d05;
+    color: #ccc;
+    text-align: center;
+}
+
+/*-----Rodapé-----*/
+footer {
+    width: 100vw; /* ocupa toda a largura da viewport */
+    margin-left: calc(-1 * (100vw - 100%)/2); /* corrige possíveis barras de rolagem */
+}
+
+.footer-container {
+    width: 100%;
+    background-color: #b63d05;
+    color: #ccc;
+    text-align: center;
+}
+
+/* Container principal do footer */
+.footer-container .logo-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    flex-wrap: wrap; /* permite quebrar em telas menores */
+}
+
+/* Logo */
+.footer-container img.icon-rodape {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  background-color: #b63d05;
+  border-radius: 6px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+/* Área do menu */
+.footer-container .footer-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Menu em coluna */
+.footer-container #menu-principal {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+}
+
+/* Links do menu */
+.footer-container #menu-principal a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+.footer-container #menu-principal a:hover {
+  color: #f37702;
+}
+
+/* Cartão */
+.footer-container .cartao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-container .footer-img-cartao img {
+  width: 290px;
+  border-radius: 6px;
+}
+
+.footer-container .cartao span {
+    font-size: 20px;
+}
+
+/* Direitos autorais */
+.footer-container .autorais {
+  display: block;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 0.9rem;
+  color: #ddd;
+  border-top: 1px solid #a63a04;
+  margin-top: 10px;
+}

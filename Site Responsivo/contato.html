@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Open+Sans:wght@300;400;600&family=Pacifico&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./style/contato.css"> 
+    <link rel="stylesheet" href="./style/mobile.css">
+    <link rel="stylesheet" href="./style/animacao.css">
+    <title>Menu</title>
+    <script src="./script/index.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <header> <!--cabeçalho-->
+        <!--menu-->
+        <nav id="nav-esq"> <!-- botões e logo -->
+            <div id="logo">
+                <img src="./imagens/logo.png" alt="logo">
+            </div>
+            <ul id="icone-menu">
+                <li id="menu"> <!--lista ordenada com pontos-->
+                    <ion-icon name="menu-outline"></ion-icon>
+                </li>
+                <li id="menuX">
+                    <ion-icon name="close-outline"></ion-icon> 
+                </li>
+            </ul>
+            <ul id="menu-principal">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="servico.html">Serviços</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+        <!--Formulário-->
+        <div class="contato">
+            <h1><u>Formulário de Contato</u></h1><br>
+        </div>
+        <div class="form">
+            <div class="form-floating mb-3">
+                <label for="floatingInput">Nome Completo</label>
+                <input type="text" class="form-control" id="floatingName" placeholder="Digite seu nome aqui">
+            </div>
+            <div class="form-floating">
+                <label for="floatingPassword">Email</label>
+                <input type="email" class="form-control" id="floatingEmail" placeholder="Digite seu email aqui">   
+            </div>
+            <div class="form-floating">
+                <label for="floatingTextarea2">Comentário</label>
+                <textarea class="form-control" placeholder="Deixe seu comentário aqui" id="floatingTextarea2" style="height: 200px"></textarea>                
+            </div>
+
+            <button class="btn btn-primary" type="submit">Enviar</button>
+        </div>
+    </header>
+
+
+    <!--Rodapé-->
+    <footer>
+        <div class="footer-container">  
+            <!--Logo-->
+            <div class="logo-footer">
+                <div>
+                    <img src="./imagens/logo.png" alt="Logo Imagem" class="icon-rodape"> 
+                </div> 
+                <!--Menu-->
+                <div class="footer-info">
+                    <ul id="menu-principal">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="servico.html">Serviços</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <!--Cartão-->
+                <div class="cartao">
+                    <span><u>Parcelamos em até 12x!</u></span>
+                    <div class="footer-img-cartao">
+                        <img src="./imagens/cartao.jpeg" alt="Imagem Cartão">
+                    </div>
+                </div>
+            </div>  
+            <span class="autorais">
+                © 2025 - Todos os Direitos Reservados à Company Tech
+                <i class="fs fs-codepen" aria-hidden="true"></i>
+            </span>
+        </div>
+    </footer>
+</section>
+</main> 
+    <!--jQuery-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./script/index.js"></script>
+</body>
+</html>
